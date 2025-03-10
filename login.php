@@ -1,10 +1,7 @@
 <?php
     session_start();
 
-    define('DB_HOST', 'localhost');
-    define('DB_NAME', 'crud');  
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', '');
+    require_once 'config.php';
 
     $pdo=new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
      if (isset($_POST['utilisateur'])) echo "<br>" .$_POST['utilisateur'];
@@ -16,10 +13,21 @@
         $mot_de_passe = $_POST['mot_de_passe'];
 
        // $query = $pdo->prepare("SELECT * FROM utilisateurs WHERE email =" . $utilisateur); trop dangereux car faille SQL injection
-        $requete = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :utilisateur ");
+        $requete = $pdo->prepare("SELECT * FROM Etudiants WHERE email = :utilisateur ");
         $requete->execute(array('utilisateur' => $utilisateur));
         $data = $requete->fetch();
-        var_dump($data);
+       // var_dump($data);
+     
+        if($data) {
+            if (password_verify($mot_de_passe , $data['mot_de_passe'])) {
+                echo "Connexion réussiz";
+            }
+            else {
+                echo "user name ou password invalide";
+            }
+        }else {
+            echo "user name ou password invalide";
+        }
 
 
         //echo " Le formulaire a été envoyé<br>";
