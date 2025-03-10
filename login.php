@@ -20,7 +20,9 @@
      
         if($data) {
             if (password_verify($mot_de_passe , $data['mot_de_passe'])) {
-                echo "Connexion réussiz";
+                $_SESSION['utilisateur'] = $utilisateur;
+                header('Location: index.php');
+                exit;
             }
             else {
                 echo "user name ou password invalide";
@@ -47,14 +49,19 @@
         
 ?>
 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Connectez-vous ! </title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <?php
+        require_once 'composants/menu.php';
+    ?>
     <h1>Connectez-vous !</h1>
     <form action="login.php" method="post">
 
