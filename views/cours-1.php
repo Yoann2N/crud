@@ -1,5 +1,5 @@
 <?php
-    include 'composants/start.php';
+    include '../composants/start.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-        require_once 'composants/menu.php';
+        require_once '../composants/menu.php';
     ?>
     <h1>Cours</h1>
 </body>

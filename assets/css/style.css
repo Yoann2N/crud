@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.menu li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu a:hover {
+    color: #f00;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 8px;
+}
+
+form.etudiant>div {
+    margin: 10px 0;
+    
+}
+
+form.etudiant>div.checkbox {
+    margin: 20px 0;
+    
+}
+
+form.etudiant label {
+    display: inline-block;
+    width: 100px;
+    
+}
+
+/* form.etudiant div>label {
+    display: block;
+    width: 100px;
+    
+} */
+
+form.etudiant div>input[type="text"]
+form.etudiant div>input [type="email"]
+form.etudiant div>input [type="tel"] {
+    width: 200px;
+    padding: 5px;
+    
+}
+
+form.etudiant input[type="submit"] {
+    padding: 5px 10px;
+    background-color: rgb(0, 132, 255);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+a.bouton {
+    padding: 5px 10px;
+    background-color: rgb(0, 132, 255);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.bouton.bleu{
+    background-color: rgb(0, 132, 255);
+}
+
+a.bouton.rouge{
+    background-color: rgb(255, 0, 17);
+}
+
+a.bouton.vert{
+    background-color: rgb(0, 255, 17);
+}
+

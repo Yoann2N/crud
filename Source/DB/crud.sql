@@ -5,7 +5,7 @@ CREATE DATABASE crud;
 USE crud;
 
 CREATE TABLE Etudiants(
-   id_ INT PRIMARY KEY AUTO_INCREMENT,
+   id INT PRIMARY KEY AUTO_INCREMENT,
    nom VARCHAR(50) NOT NULL,
    prenom VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Etudiants(
    
 );
 
-CREATE TABLE cours_(
+CREATE TABLE cours(
    id INT PRIMARY KEY AUTO_INCREMENT,
    nom VARCHAR(50) NOT NULL
    
@@ -27,8 +27,8 @@ CREATE TABLE inscription(
    id INT PRIMARY KEY AUTO_INCREMENT,
    id_personne INT,
    id_cours INT,
-   FOREIGN KEY(id_personne) REFERENCES Etudiants(id_),
-   FOREIGN KEY(id_cours) REFERENCES cours_(id)
+   FOREIGN KEY(id_personne) REFERENCES Etudiants(id),
+   FOREIGN KEY(id_cours) REFERENCES cours(id)
 );
 
 -- remplissage des tables 
@@ -45,7 +45,7 @@ INSERT INTO Etudiants (nom, prenom, email, mot_de_passe, telephone, admin, etudi
 ('Lefevre', 'Antoine', 'antoine.lefevre@email.com', '$2y$10$mQ0VKCSONCFHQhwfodWnHuC851yKSAHSPkS4gb52TefIe0ETaznde', '0626272829', FALSE, TRUE, FALSE),
 ('Lemoine', 'Emma', 'emma.lemoine@email.com', '$2y$10$pRaIgz/Eui4RkyxG8yp81ugUb4LsvZ6YcA8eLrmusb/31EcI4nI72', '0630313233', FALSE, TRUE, FALSE);
 
-INSERT INTO cours_ (nom) VALUES
+INSERT INTO cours (nom) VALUES
 ('Mathématiques'),
 ('Informatique'),
 ('Physique'),
